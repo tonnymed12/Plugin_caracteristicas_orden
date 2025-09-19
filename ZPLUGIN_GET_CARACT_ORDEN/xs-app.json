@@ -1,0 +1,14 @@
+{
+  "welcomeFile": "/ZPLUGIN_GET_CARACT_ORDEN/index.html",
+  "authenticationMethod": "none",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "source": "^/ZPLUGIN_GET_CARACT_ORDEN/(.*)$",
+      "target": "$1",
+      "localDir": "webapp"
+    }
+  ]
+}
