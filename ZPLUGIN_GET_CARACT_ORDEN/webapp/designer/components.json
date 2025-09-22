@@ -9,7 +9,7 @@
 			"i18n": "serviacero.custom.plugins.ZPLUGIN_GET_CARACT_ORDEN.ZPLUGIN_GET_CARACT_ORDEN.i18n.i18n",
             "productionProcessEnabled": true,
            "productionProcessTitle": "ZPLUGIN_GET_CARACT_ORDEN",
-			"supportedPodTypes": ["WORK_CENTER","OPERATION","ORDER"]
+			"supportedPodTypes": ["WORK_CENTER","OPERATION","ORDER","OTHER"]
 		}   
 	]
 }

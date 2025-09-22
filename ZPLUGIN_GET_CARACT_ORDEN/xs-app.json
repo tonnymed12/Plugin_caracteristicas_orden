@@ -9,6 +9,12 @@
       "source": "^/ZPLUGIN_GET_CARACT_ORDEN/(.*)$",
       "target": "$1",
       "localDir": "webapp"
+    },
+    {
+      "source": "^/sapApi/(.*)$",
+      "target": "$1",
+      "destination": "SAP_API_TST",
+      "authenticationType": "xsuaa"      
     }
   ]
 }
