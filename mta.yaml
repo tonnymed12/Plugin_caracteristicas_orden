@@ -25,6 +25,7 @@ modules:
       #builder: grunt
    requires:
     - name: uaa_indicator_suite_ZPLUGIN_GET_CARACT_ORDEN
+    - name: spfioriapp-dest-srv
 
 resources:
  - name: uaa_indicator_suite_ZPLUGIN_GET_CARACT_ORDEN
@@ -33,4 +34,10 @@ resources:
       service-plan: application
       service: xsuaa
    type: org.cloudfoundry.managed-service
+ - name: spfioriapp-dest-srv
+   type: org.cloudfoundry.managed-service
+   parameters:
+      service: destination
+      service-name: spfioriapp-dest-srv
+      service-plan: lite
 

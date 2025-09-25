@@ -13,7 +13,7 @@
     {
       "source": "^/sapApi/(.*)$",
       "target": "$1",
-      "destination": "SAP_API_TST",
+      "destination": "SAP_API",
       "authenticationType": "xsuaa"      
     }
   ]
