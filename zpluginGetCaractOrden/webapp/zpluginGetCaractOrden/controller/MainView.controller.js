@@ -3,8 +3,10 @@ sap.ui.define([
 	"sap/dm/dme/podfoundation/controller/PluginViewController",
 	"sap/ui/model/json/JSONModel",
     "./Utils/Commons",
-    "./Utils/ApiPaths"
-], function (jQuery, PluginViewController, JSONModel, Commons, ApiPaths) {
+    "./Utils/ApiPaths",
+    "sap/ui/core/Element",
+    "sap/m/MessageBox",
+], function (jQuery, PluginViewController, JSONModel, Commons, ApiPaths, Element, MessageBox) {
 	"use strict";
 
 	return PluginViewController.extend("serviacero.custom.plugins.zpluginGetCaractOrden.zpluginGetCaractOrden.controller.MainView", {
@@ -82,6 +84,27 @@ sap.ui.define([
         
 
 		onExit: function () {
-		}
+		},
+        
+        onScanSuccess: function (oEvent) {
+            if (oEvent.getParameter("cancelled")) {
+                MessageToast.show("Scan cancelled", { duration: 1000 });
+            } else {
+                if (oEvent.getParameter("text")) {
+                    //oScanResultText.setText(oEvent.getParameter("text"));
+                    MessageBox.success(oEvent.getParameter("text"));
+                } else {
+                    //oScanResultText.setText('');
+                }
+            }
+        },
+
+        onScanError: function (oEvent) {
+            MessageToast.show("Scan failed: " + oEvent, { duration: 1000 });
+        },
+
+        onScanLiveupdate: function (oEvent) {
+            // User can implement the validation about inputting value
+        }
 	});
 });
