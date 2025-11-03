@@ -18,43 +18,8 @@
                 accessibleRole="Region"
                 backgroundDesign="Transparent"
                 class="sapUiNoContentPadding">  
-        <headerToolbar>
-            <Toolbar height="3rem">
-                <Button
-                    id="backButton"
-                    visible="false"
-                    text="{i18n>template.back.btn}"
-                    tooltip="{i18n>template.back.tooltip}"
-                    icon="sap-icon://nav-back"
-                    press="onBackPress"/>
-                <Title id="headerTitle" text="{i18n>customTitle.title}"/>
-                <ToolbarSpacer/>
-                <Button
-                    id="closeButton"
-                    visible="false"
-                    tooltip="{i18n>template.close.tooltip}"
-                    icon="sap-icon://decline"
-                    press="onClosePress"/>
-            </Toolbar>
-        </headerToolbar>
         <content> 
-            <VBox class="sapUiSmallMargin">
-                <ndc:BarcodeScannerButton
-                    id="sampleBarcodeScannerButton"
-                    scanSuccess="onScanSuccess"
-                    scanFail="onScanError"
-                    inputLiveUpdate="onScanLiveupdate"
-                    dialogTitle="Barcode Scanner Button Sample"
-                />
-                <HBox class="sapUiTinyMarginTop">
-                    <Label text="Scan Result:" />
-                    <Text
-                        id="sampleBarcodeScannerResult"
-                        text=""
-                        class="sapUiTinyMarginBegin"
-                    />
-                </HBox>
-            </VBox>
+           <Title id="headerTitle" text="{i18n>customTitle.title}"/>
            <Table busyIndicatorDelay="10" id="CUSTOM_PLUGIN_ORDER_TABLE" mode="None"
             alternateRowColors="true"
             items="{

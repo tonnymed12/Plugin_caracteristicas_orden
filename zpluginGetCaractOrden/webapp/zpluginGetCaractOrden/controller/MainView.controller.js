@@ -39,6 +39,7 @@ sap.ui.define([
             this.getView().byId("headerTitle").setText(this.getConfiguration().title);
             this.getView().byId("textPlugin").setText(this.getConfiguration().text); 
 
+            
             oTable.setModel(new JSONModel({}));
             this.Commons.consumeApi(sUri, "GET", null, function (oData) {
                 //Modelar oData a ITEMS para tabla
