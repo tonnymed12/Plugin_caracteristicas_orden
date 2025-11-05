@@ -25,21 +25,13 @@ sap.ui.define([
 
         onAfterRendering: function(){
             const oView = this.getView(),
-            oSapApi = this.getOwnerComponent().getManifestEntry("/sap.app/dataSources/sapApi-RestSource/uri"),
+            oSapApi2 = this.getPublicApiRestDataSourceUri(),
             oPODParams = this.Commons.getPODParams(this.getOwnerComponent()),
             oTable = oView.byId("CUSTOM_PLUGIN_ORDER_TABLE"),
             sOrder = oPODParams.ORDER_ID,
             sPlant = oPODParams.PLANT_ID,
-            sUri = oSapApi + this.ApiPaths.ORDERS + "?plant=" + sPlant + "&order=" + sOrder;
-           
-           
-            this.getView().byId("backButton").setVisible(this.getConfiguration().backButtonVisible);
-            this.getView().byId("closeButton").setVisible(this.getConfiguration().closeButtonVisible);
-            
-            this.getView().byId("headerTitle").setText(this.getConfiguration().title);
-            this.getView().byId("textPlugin").setText(this.getConfiguration().text); 
+            sUri = oSapApi2 + this.ApiPaths.ORDERS + "?plant=" + sPlant + "&order=" + sOrder;
 
-            
             oTable.setModel(new JSONModel({}));
             this.Commons.consumeApi(sUri, "GET", null, function (oData) {
                 //Modelar oData a ITEMS para tabla
@@ -85,27 +77,6 @@ sap.ui.define([
         
 
 		onExit: function () {
-		},
-        
-        onScanSuccess: function (oEvent) {
-            if (oEvent.getParameter("cancelled")) {
-                MessageToast.show("Scan cancelled", { duration: 1000 });
-            } else {
-                if (oEvent.getParameter("text")) {
-                    //oScanResultText.setText(oEvent.getParameter("text"));
-                    MessageBox.success(oEvent.getParameter("text"));
-                } else {
-                    //oScanResultText.setText('');
-                }
-            }
-        },
-
-        onScanError: function (oEvent) {
-            MessageToast.show("Scan failed: " + oEvent, { duration: 1000 });
-        },
-
-        onScanLiveupdate: function (oEvent) {
-            // User can implement the validation about inputting value
-        }
+		}
 	});
 });

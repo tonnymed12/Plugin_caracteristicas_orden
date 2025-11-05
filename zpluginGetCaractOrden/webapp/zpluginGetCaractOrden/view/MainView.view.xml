@@ -18,8 +18,16 @@
                 accessibleRole="Region"
                 backgroundDesign="Transparent"
                 class="sapUiNoContentPadding">  
+            <headerToolbar>
+                <OverflowToolbar>
+                    <Title
+                        text="{i18n>customTitle.title}"
+                        level="H2"
+                    />
+                    <ToolbarSpacer />
+                </OverflowToolbar>
+            </headerToolbar>
         <content> 
-           <Title id="headerTitle" text="{i18n>customTitle.title}"/>
            <Table busyIndicatorDelay="10" id="CUSTOM_PLUGIN_ORDER_TABLE" mode="None"
             alternateRowColors="true"
             items="{
