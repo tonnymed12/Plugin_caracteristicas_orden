@@ -41,6 +41,9 @@
                         <Label text="{i18n>customDataTable.columnAttribute}" />
                     </Column>
                     <Column hAlign="Begin" vAlign="Middle" width="50%">
+                        <Label text="{i18n>customDataTable.description}" />
+                    </Column>
+                    <Column hAlign="Begin" vAlign="Middle" width="50%">
                         <Label text="{i18n>customDataTable.columnValue}" />
                     </Column>
                 </columns>
@@ -48,6 +51,7 @@
                 <items>
                     <ColumnListItem>
                         <Text text="{attribute}" />
+                        <Text text="{description}" />
                         <Text text="{value}" />
                     </ColumnListItem>
                 </items>

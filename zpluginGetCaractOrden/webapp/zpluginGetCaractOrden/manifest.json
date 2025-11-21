@@ -27,6 +27,10 @@
 				"settings": {
                     "odataVersion": "4.0"
                 }
+			},
+			"sapApi-RestSource": {
+				"uri": "https://dm-serviacero-tst-f0v7amdy.execution.us20-quality.web.dmc.cloud.sap/sapdmdmematerial/dme/",
+				"type": "XML"
 			}
 		}
 	},

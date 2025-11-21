@@ -417,5 +417,15 @@ sap.ui.define([
              */
             return oThis.getView().getModel("i18n").getResourceBundle();
         },
+        
+
+        getSapApiPath: function (oThis) {
+            /**
+             * Returns the resource bundle
+             * @param {Object} oThis The component of the controller's view
+             * Use this (context) as parameter
+             */
+            return oThis.getOwnerComponent().getManifestEntry("/sap.app/dataSources/sapApi-RestSource/uri");
+        }
     }
 });
